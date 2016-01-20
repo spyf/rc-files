@@ -115,11 +115,4 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php70.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
-alias nginx.start='sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
-alias nginx.stop='sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.nginx.plist'
-alias nginx.restart='nginx.stop && nginx.start'
-PHP_AUTOCONF="/usr/local/bin/autoconf"
-export PATH="/usr/local/sbin:$PATH"
+
