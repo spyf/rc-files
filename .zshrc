@@ -82,8 +82,10 @@ export PATH="/usr/local/bin:/usr/local/Cellar:/usr/bin:/bin:/usr/sbin:/sbin"
 #export PYENV_ROOT=/usr/local/opt/pyenv
 export PYENV_ROOT=/Users/ysya/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
-if command -v pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # export MANPATH="/usr/local/man:$MANPATH"
+#
+if command -v pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
 if [ -d $(brew --prefix)/Cellar/php70 ]; then
     export PATH=$(brew --prefix)/opt/php70/bin:$PATH
