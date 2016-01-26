@@ -25,6 +25,8 @@ POWERLINE_GIT_UNMERGED="═"
 
 export TERM="xterm-256color"
 
+PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
+
 if command -v tmux>/dev/null; then
         if [ ! -z "$PS1" ]; then # unless shell not loaded interactively, run tmux
                 [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
@@ -86,6 +88,24 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 #
 if command -v pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+if [[ ! -o interactive ]]; then
+    return
+fi
+
+compctl -K _pyenv pyenv
+
+_pyenv() {
+  local words completions
+  read -cA words
+
+  if [ "${#words}" -eq 2 ]; then
+    completions="$(pyenv commands)"
+  else
+    completions="$(pyenv completions ${words[2,-2]})"
+  fi
+
+  reply=(${(ps:\n:)completions})
+}
 
 if [ -d $(brew --prefix)/Cellar/php70 ]; then
     export PATH=$(brew --prefix)/opt/php70/bin:$PATH
