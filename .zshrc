@@ -79,11 +79,12 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/Cellar:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/Cellar:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
 # For pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
 export PYENV_ROOT=/Users/ysya/.pyenv
 export PATH="$PYENV_ROOT/bin:$PATH"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # export MANPATH="/usr/local/man:$MANPATH"
 #
 if command -v pyenv > /dev/null; then eval "$(pyenv init -)"; fi
@@ -114,8 +115,8 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
