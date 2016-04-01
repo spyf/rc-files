@@ -22,7 +22,7 @@ POWERLINE_GIT_DELETED="%F{red}✖%F{black}"
 POWERLINE_GIT_UNTRACKED="%F{yellow}✭%F{black}"
 POWERLINE_GIT_RENAMED="➜"
 POWERLINE_GIT_UNMERGED="═"
-
+export CLICOLOR=1
 export TERM="xterm-256color"
 
 PROMPT="$PROMPT"'$([ -n "$TMUX" ] && tmux setenv TMUXPWD_$(tmux display -p "#D" | tr -d %) "$PWD")'
@@ -107,10 +107,6 @@ _pyenv() {
 
   reply=(${(ps:\n:)completions})
 }
-
-if [ -d $(brew --prefix)/Cellar/php70 ]; then
-    export PATH=$(brew --prefix)/opt/php70/bin:$PATH
-fi
 
 source $ZSH/oh-my-zsh.sh
 
