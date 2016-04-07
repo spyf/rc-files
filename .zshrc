@@ -79,7 +79,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/Cellar:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/usr/local/bin:/usr/local/Cellar:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib"
 # For pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
 export PYENV_ROOT=/Users/ysya/.pyenv
