@@ -79,11 +79,15 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/Cellar:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib"
+export PATH="$PYENV_ROOT/bin:/usr/local/bin:/usr/local/Cellar:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib"
+export PATH="/Users/ysya/python/phantomjs-1.9.7-macosx/bin:$PATH"
+export PATH="/Users/ysya/python/casperjs-1.1.0-beta3/bin:$PATH"
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
+
 # For pyenv
 #export PYENV_ROOT=/usr/local/opt/pyenv
 export PYENV_ROOT=/Users/ysya/.pyenv
-export PATH="$PYENV_ROOT/bin:$PATH"
+# export PATH="$PYENV_ROOT/bin:$PATH"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # export MANPATH="/usr/local/man:$MANPATH"
 #
@@ -134,4 +138,3 @@ export LC_ALL=en_US.UTF-8
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
