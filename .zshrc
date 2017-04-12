@@ -82,8 +82,6 @@ plugins=(git)
 # User configuration
 
 export PATH="$PYENV_ROOT/bin:/usr/local/bin:/usr/local/Cellar:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib"
-export PATH="/Users/ysya/python/phantomjs-1.9.7-macosx/bin:$PATH"
-export PATH="/Users/ysya/python/casperjs-1.1.0-beta3/bin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
 
 # For pyenv
@@ -144,3 +142,8 @@ alias mongodb="mongod --dbpath ~/data/db"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 # vs () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/ysya/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ysya/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/ysya/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ysya/google-cloud-sdk/completion.zsh.inc'; fi
